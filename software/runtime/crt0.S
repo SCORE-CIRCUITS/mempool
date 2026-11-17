@@ -76,7 +76,7 @@ _reset_vector:
     add     sp, sp, t0                                          // offset += 16 * xqueue_size * 4
     // Write the stack limit into the dedicated CSR
     addi    t0, sp, -(STACK_SIZE-4)                             // stack_limit = sp - (STACK_SIZE - 1)
-    csrw    stacklimit, t0                                     // write stack limit into CSR
+    csrw    0x7d1, t0                                          // write stack limit into CSR
     // Configure the RO cache or directly jump to main
     bnez    a0, _jump_main
     li      t0, (CONTROL_REGISTER_OFFSET + CONTROL_REGISTERS_RO_CACHE_END_0_REG_OFFSET) // Get peripheral register to set cacheable region

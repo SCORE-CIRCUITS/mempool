@@ -24,7 +24,7 @@
 // C++ mode and flags
 --cc
 -O3
--CFLAGS "-std=c++11 -Wall -g -O3"
+-CFLAGS "-std=c++17 -Wall -g -O3"
 -LDFLAGS "-pthread -lutil -lelf"
 
 // Specifies the maximum number of loop iterations that may be unrolled.

@@ -649,6 +649,7 @@ void mat_mul_unrolled_4x4_conflict_opt_parallel(int32_t const *__restrict__ A,
 #define P3 (matrix_P - 3) * 4
 #define P31 (-3 * matrix_N + 1) * 4
 
+#ifdef __XPULPIMG
 void mat_mul_unrolled_4x4_parallel_asm(int32_t const *__restrict__ A,
                                        int32_t const *__restrict__ B,
                                        int32_t *__restrict__ C, uint32_t M,
@@ -1031,3 +1032,4 @@ void mat_mul_unrolled_4x4_conflict_opt_parallel_asm(
     }
   }
 }
+#endif
